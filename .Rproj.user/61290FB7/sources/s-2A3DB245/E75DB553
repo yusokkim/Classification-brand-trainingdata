@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580824128693.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E75DB553",
+    "lastKnownWriteTime" : 2379026940224,
+    "last_content_update" : 1580824128693,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "f7f8c4d453fb407bacdf24f9d4350e6f",
+        "name" : "tree_mod",
+        "title" : "tree_mod"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

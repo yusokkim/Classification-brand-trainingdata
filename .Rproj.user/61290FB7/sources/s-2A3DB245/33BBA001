@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580827773626.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "33BBA001",
+    "lastKnownWriteTime" : 7310579611546251075,
+    "last_content_update" : 1580827773626,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "9debcb6a519740479520544f847c14f0",
+        "name" : "fitControl",
+        "title" : "fitControl"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

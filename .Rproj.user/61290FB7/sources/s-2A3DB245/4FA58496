@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580829410770.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "4FA58496",
+    "lastKnownWriteTime" : 2202988673744,
+    "last_content_update" : 1580829410770,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "66a32a38f53d4a1ebd9c29a61c7c4b73",
+        "name" : "dt_model",
+        "title" : "dt_model"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

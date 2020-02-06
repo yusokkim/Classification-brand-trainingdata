@@ -1,0 +1,165 @@
+exercise <- read.csv("C:/Users/Y.S. Kim/Desktop/Ubiqum/R/Dataset/exercise.csv")
+
+#replace missing values by the mean
+exercise$Sepal.Length[is.na(exercise$Sepal.Length)]<-mean(exercise$Sepal.Length,na.rm = TRUE)
+exercise$Sepal.Width[is.na(exercise$Sepal.Width)]<-mean(exercise$Sepal.Width,na.rm = TRUE)
+exercise$Petal.Length[is.na(exercise$Petal.Length)]<-mean(exercise$Petal.Length,na.rm = TRUE)
+exercise$Petal.Width[is.na(exercise$Petal.Width)]<-mean(exercise$Petal.Width,na.rm = TRUE)
+
+#deleting rows with NA in column with categorical values
+na.omit(exercise$Species)
+
+summary(is.na(exercise))
+
+exercise <- na.omit(exercise)
+# na.exclude(exercise$Species)
+# 
+# is.na(exercise)
+# 
+# summary(exercise)
+
+summary(exercise)
+summary(is.na(exercise))
+
+#making boxplot for Sepal.Length
+boxplot(exercise$Sepal.Length)
+
+boxplot(exercise$Sepal.Length)$out
+
+#assign outlier value into vector
+outliers <- boxplot(exercise$Sepal.Length, plot=FALSE)$out
+
+print(outliers)
+
+#find out in which rows the outliers are
+exercise[which(exercise$Sepal.Length %in% outliers),]
+
+#Now you can remove the rows containing the outliers, one possible option is:
+exercise <- exercise[-which(exercise$Sepal.Length %in% outliers),]
+
+boxplot(exercise$Sepal.Length)
+
+#making boxplot for Sepal.Width
+boxplot(exercise$Sepal.Width)
+boxplot(exercise$Sepal.Width)$out
+
+#assign outlier value into vector
+outliers <- boxplot(exercise$Sepal.Width, plot=FALSE)$out
+
+print(outliers)
+
+#find out in which rows the outliers are
+exercise[which(exercise$Sepal.Width %in% outliers),]
+
+summary(exercise)
+
+#Now you can remove the rows containing the outliers, one possible option is:
+exercise <- exercise[-which(exercise$Sepal.Width %in% outliers),]
+
+boxplot(exercise$Sepal.Width)
+
+#making boxplot for Petal.Lenght
+boxplot(exercise$Petal.Length)
+boxplot(exercise$Petal.Length)$out
+
+#assign outlier value into vector
+outliers <- boxplot(exercise$Petal.Length, plot=FALSE)$out
+
+print(outliers)
+
+#find out in which rows the outliers are
+exercise[which(exercise$Petal.Length %in% outliers),]
+
+#Now you can remove the rows containing the outliers, one possible option is:
+exercise <- exercise[-which(exercise$Petal.Length %in% outliers),]
+
+boxplot(exercise$Petal.Length)
+
+#making boxplot for Petal.Width
+boxplot(exercise$Petal.Width)
+boxplot(exercise$Petal.Width)$out
+
+#assign outlier value into vector
+outliers <- boxplot(exercise$Petal.Width, plot=FALSE)$out
+
+print(outliers)
+
+#find out in which rows the outliers are
+exercise[which(exercise$Petal.Width %in% outliers),]
+
+#Now you can remove the rows containing the outliers, one possible option is:
+exercise <- exercise[-which(exercise$Petal.Width %in% outliers),]
+
+boxplot(exercise$Petal.Width)
+
+names(exercise) <- c("Sepal.Length","Sepal.Width","Petal.Length","Petal.Width","Plants")
+
+# #removing row 41, 46 and 94
+# exercise <- exercise[-41,]
+# exercise <- exercise[-46,]
+# exercise <- exercise[-94,]
+
+any(is.na(exercise))
+
+is.na(exercise)
+
+summary(exercise)
+
+exercise$Petal.Area <- exercise$Petal.Length*exercise$Petal.Width
+
+#plot
+plot(exercise)
+
+d <- exercise
+
+d <- exercise[,c(-5)]
+plot(d)
+
+cor(d)
+
+cr <- cor(d)
+
+library(corrplot)
+corrplot(cr)
+corrplot(cr, method="pie")
+corrplot(cr, method="color")
+corrplot(cr, method="number")
+
+#ggplot2
+library(ggplot2)
+
+table(exercise$Plants)
+
+#scatterplot
+plot(exercise$Petal.Width ~ exercise$Petal.Length)
+plot(exercise$Petal.Width ~ exercise$Petal.Length, ylab = "Petal Width", xlab= "Petal Length", main = "Petal Width vs. Petal Length")
+plot(exercise$Petal.Width ~ exercise$Petal.Length, ylab = "Petal Width", xlab= "Petal Length", main = "Petal Width vs. Petal Length", col="blue", pch=16)
+
+#histogram of Petal.Width
+hist(exercise$Petal.Width)
+
+#boxplot of Petal Width according to Plants
+boxplot(exercise$Petal.Width ~ exercise$Plants)
+
+#boxplot of Petal Length according to Plants
+boxplot(exercise$Petal.Length ~ exercise$Plants)
+boxplot(exercise$Petal.Length ~ exercise$Plants, ylab = "Petal Length", xlab = "Species", main = "Petal Length vs. Species", col="blue")
+hist(exercise$Petal.Length)
+
+ggplot(data=exercise)
+ggplot(data=exercise,aes(y=Petal.Width,x=Petal.Length))
+ggplot(data=exercise,aes(y=Petal.Width,x=Petal.Length,col=Plants))+geom_point()
+
+
+ggplot(data = exercise) +
+  geom_point(aes(x = Sepal.Length, y = Sepal.Width), col = "red") +
+  geom_point(aes(x = Petal.Length, y = Petal.Width), col = "blue") +
+  facet_wrap(~Plants) +
+  theme_bw()
+
+
+
+
+
+
+

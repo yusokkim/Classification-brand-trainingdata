@@ -1,0 +1,94 @@
+
+install.packages("ggplot2")
+library(ggplot2)
+
+#load data
+readRDS("Blackwell_Hist_Sample.rds")
+
+Blackwell_Hist_Sample <- readRDS("Blackwell_Hist_Sample.rds")
+
+summary(Blackwell_Hist_Sample)
+
+names(Blackwell_Hist_Sample)
+
+ggplot(data = Blackwell_Hist_Sample, aes(y = amount, x = age, color=region)) +
+  geom_point()
+
+ggplot() +
+  geom_point(data = Blackwell_Hist_Sample, aes(y=amount,x=age,color=region)) +
+  facet_grid(.~in.store)
+
+#scatterplot age vs amount with facet wrap region ~instore
+ggplot() +
+  geom_point(data = Blackwell_Hist_Sample, aes(x = age, y = amount, color = region)) +
+  geom_smooth(data = Blackwell_Hist_Sample, aes(x = age, y = amount, color = region)) +
+  facet_wrap(region ~ in.store)
+
+ggplot(data = Blackwell_Hist_Sample, aes(x = age, y = amount, color = region)) +
+  geom_point() +
+  geom_smooth(color = "black") +
+  facet_wrap(region ~ in.store)
+  geom_bar()
+  
+ggplot(data = Blackwell_Hist_Sample, aes(x = age, y = amount, color = region)) +
+    geom_bar()
+
+#geom_bar count x variable
+ggplot(data = Blackwell_Hist_Sample, aes(x=age)) + 
+  geom_bar(stat = "count")
+
+#geom_bar identity x vs y variable
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity")
+
+#geom_bar fill region, age vs amount
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity", aes(fill=region)) +
+  facet_wrap(~region)
+
+hist(Blackwell_Hist_Sample$amount)
+
+#Create bar chart with the count of observation for each region
+
+#geom_bar fill region, count age
+ggplot(data = Blackwell_Hist_Sample, aes(x=age)) + 
+  geom_bar(stat = "count", aes(fill=region)) +
+  facet_wrap(~region)
+
+#same, but age binned
+ggplot(data = Blackwell_Hist_Sample, aes(x=age)) + 
+  geom_histogram(aes(fill=region), bins = 20) +
+  facet_wrap(~region)
+
+#geom_bar fill region, count amount. Amount is a continuous numerical variable, and should be binned for count on y-axis.
+ggplot(data = Blackwell_Hist_Sample, aes(x=amount)) + 
+  geom_histogram(aes(fill=region), bins = 20) +
+  facet_wrap(~region)
+
+#geom_bar fill region, count items
+ggplot(data = Blackwell_Hist_Sample, aes(x=items)) + 
+  geom_bar(stat = "count", aes(fill=region)) +
+  facet_wrap(~region)
+
+#geom_bar fill region, count in.store
+ggplot(data = Blackwell_Hist_Sample, aes(x=in.store)) + 
+  geom_bar(stat = "count", aes(fill=region)) +
+  facet_wrap(~region)
+
+
+#geom_bar fill in.store
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity", aes(fill=in.store))
+
+#position = "dodge"
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity", aes(fill=in.store), position = "dodge")
+
+#change geometry to geom_col
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity", aes(fill=in.store), position = "dodge") 
+
+#coord flip
+ggplot(data = Blackwell_Hist_Sample, aes(x=age, y=amount)) + 
+  geom_bar(stat = "identity", aes(fill=in.store)) +
+  coord_flip()

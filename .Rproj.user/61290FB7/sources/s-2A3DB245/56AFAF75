@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580831963485.000,
+    "dirty" : false,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "56AFAF75",
+    "lastKnownWriteTime" : 1580827299,
+    "last_content_update" : 1580831963485,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "id" : "50a62431c5d64d448d503556a3db9363",
+        "name" : "rf_model",
+        "title" : "rf_model"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "object_explorer"
+}

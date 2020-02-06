@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1580806106566.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3258309081",
+    "id" : "11963240",
+    "lastKnownWriteTime" : 1580981106,
+    "last_content_update" : 1580981928298,
+    "path" : "C:/Users/Y.S. Kim/Desktop/Ubiqum/R/Task 2 Classification/Classification brand trainingdata.R",
+    "project_path" : "Classification brand trainingdata.R",
+    "properties" : {
+        "cursorPosition" : "398,0",
+        "scrollLine" : "376",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
